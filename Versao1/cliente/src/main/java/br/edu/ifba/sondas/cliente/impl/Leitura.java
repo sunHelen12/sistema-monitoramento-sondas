@@ -1,4 +1,4 @@
-package br.edu.ifba.sondas.impl;
+package br.edu.ifba.sondas.cliente.impl;
 
 public class Leitura {
 

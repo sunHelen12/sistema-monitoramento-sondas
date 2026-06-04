@@ -1,9 +1,9 @@
-package br.edu.ifba.sondas.impl;
+package br.edu.ifba.sondas.cliente.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import br.edu.ifba.sondas.sensoriamento.Sensoriamento;
+import br.edu.ifba.sondas.cliente.sensoriamento.Sensoriamento;
 
 public class SensoriamentoImpl implements Sensoriamento<Leitura> {
 

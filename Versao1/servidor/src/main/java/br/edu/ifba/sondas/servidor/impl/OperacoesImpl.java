@@ -1,12 +1,11 @@
-package br.edu.ifba.sondas.impl;
+package br.edu.ifba.sondas.servidor.impl;
 
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import br.edu.ifba.sondas.operacoes.Operacoes;
-import br.edu.ifba.sondas.ordenacao.Ordenador;
-import br.edu.ifba.sondas.ordenacao.TipoOrdenacao;
+import br.edu.ifba.sondas.servidor.operacoes.Operacoes;
+import br.edu.ifba.sondas.servidor.ordenacao.TipoOrdenacao;
 
 
 public class OperacoesImpl implements Operacoes<Sonda, Leitura> {

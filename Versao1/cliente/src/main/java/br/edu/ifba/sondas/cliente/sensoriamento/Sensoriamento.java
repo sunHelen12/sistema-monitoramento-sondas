@@ -1,4 +1,4 @@
-package br.edu.ifba.sondas.sensoriamento;
+package br.edu.ifba.sondas.cliente.sensoriamento;
 
 import java.util.List;
 

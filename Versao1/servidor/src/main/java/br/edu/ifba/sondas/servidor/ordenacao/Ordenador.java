@@ -1,4 +1,4 @@
-package br.edu.ifba.sondas.ordenacao;
+package br.edu.ifba.sondas.servidor.ordenacao;
 
 import java.util.List;
 

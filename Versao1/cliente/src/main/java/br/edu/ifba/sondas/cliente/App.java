@@ -1,6 +1,6 @@
 package br.edu.ifba.sondas.cliente;
 
-import br.edu.ifba.sondas.impl.Sonda;
+import br.edu.ifba.sondas.cliente.impl.Sonda;
 
 public class App {
     private static final int TOTAL_SONDAS = 10;

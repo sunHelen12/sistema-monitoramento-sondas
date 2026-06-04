@@ -1,4 +1,4 @@
-package br.edu.ifba.sondas.impl;
+package br.edu.ifba.sondas.servidor.impl;
 
 public class Leitura {
     private String id;

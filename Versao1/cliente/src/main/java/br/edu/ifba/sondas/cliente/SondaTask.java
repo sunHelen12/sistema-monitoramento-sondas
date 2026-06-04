@@ -6,10 +6,10 @@ import jakarta.ws.rs.client.Entity;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import br.edu.ifba.sondas.impl.Leitura;
-import br.edu.ifba.sondas.impl.SensoriamentoImpl;
-import br.edu.ifba.sondas.impl.Sonda;
-import br.edu.ifba.sondas.sensoriamento.Sensoriamento;
+import br.edu.ifba.sondas.cliente.impl.Leitura;
+import br.edu.ifba.sondas.cliente.impl.SensoriamentoImpl;
+import br.edu.ifba.sondas.cliente.impl.Sonda;
+import br.edu.ifba.sondas.cliente.sensoriamento.Sensoriamento;
 
 import java.util.List;
 

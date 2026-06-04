@@ -1,8 +1,8 @@
-package br.edu.ifba.sondas.operacoes;
+package br.edu.ifba.sondas.servidor.operacoes;
 
 import java.util.List;
 import java.util.Map;
-import br.edu.ifba.sondas.ordenacao.TipoOrdenacao;
+import br.edu.ifba.sondas.servidor.ordenacao.TipoOrdenacao;
 
 public interface Operacoes<Monitorado, Leitura> {
 

@@ -5,11 +5,11 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import br.edu.ifba.sondas.impl.Leitura;
-import br.edu.ifba.sondas.impl.OperacoesImpl;
-import br.edu.ifba.sondas.impl.Sonda;
-import br.edu.ifba.sondas.operacoes.Operacoes;
-import br.edu.ifba.sondas.ordenacao.TipoOrdenacao;
+import br.edu.ifba.sondas.servidor.impl.Leitura;
+import br.edu.ifba.sondas.servidor.impl.OperacoesImpl;
+import br.edu.ifba.sondas.servidor.impl.Sonda;
+import br.edu.ifba.sondas.servidor.operacoes.Operacoes;
+import br.edu.ifba.sondas.servidor.ordenacao.TipoOrdenacao;
 
 import java.util.List;
 import java.util.Map;

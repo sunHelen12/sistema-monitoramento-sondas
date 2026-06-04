@@ -1,4 +1,4 @@
-package br.edu.ifba.sondas.ordenacao;
+package br.edu.ifba.sondas.servidor.ordenacao;
 
 public enum TipoOrdenacao {
     POR_TEMPERATURA,
