@@ -1,0 +1,10 @@
+br/edu/ifba/sondas/servidor/Rotas.class
+br/edu/ifba/sondas/impl/Sonda.class
+br/edu/ifba/sondas/servidor/App.class
+br/edu/ifba/sondas/ordenacao/Ordenador.class
+br/edu/ifba/sondas/impl/OperacoesImpl.class
+br/edu/ifba/sondas/impl/Leitura.class
+br/edu/ifba/sondas/operacoes/Operacoes.class
+br/edu/ifba/sondas/ordenacao/TipoOrdenacao.class
+br/edu/ifba/sondas/impl/OrdenadorImpl.class
+br/edu/ifba/sondas/impl/OrdenadorImpl$1.class
