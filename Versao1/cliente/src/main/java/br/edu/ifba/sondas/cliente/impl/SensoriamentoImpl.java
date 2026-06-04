@@ -23,7 +23,7 @@ public class SensoriamentoImpl implements Sensoriamento<Leitura> {
             double temperatura = -100.0 + (rand.nextDouble() * 200.0); // -100°C a 100°C
             boolean agua = rand.nextBoolean(); // true ou false
 
-            leituras.add(new Leitura("SND-00" + i + "-L" + i, oxigenio, radiacao, temperatura, agua));
+            leituras.add(new Leitura(String.format("SND-%03d-L%03d", i + 1, i + 1), oxigenio, radiacao, temperatura, agua));
         }
         return leituras;
     }

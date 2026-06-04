@@ -15,7 +15,8 @@ public class App {
                 =====================================================================================       
                 """);
         for (int i = 1; i <= TOTAL_SONDAS ; i++) {
-            Sonda sonda = new Sonda("SND-00" + i, "Kepler-" + (100 + i));
+            String id = String.format("SND-%03d", i);
+            Sonda sonda = new Sonda(id, "Kepler-" + (100 + i));
 
             SondaTask tarefa = new SondaTask(sonda);
             Thread threadSonda = new Thread(tarefa);
