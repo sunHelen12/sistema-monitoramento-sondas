@@ -15,6 +15,8 @@ public class OperacoesImpl implements Operacoes<Sonda, Leitura> {
     private Map<Sonda, Double> probabilidades = new TreeMap<>();
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public void gravar(Sonda sonda, Leitura leitura) {
         Queue<Leitura> leituras = new LinkedList<>();
@@ -42,6 +44,8 @@ public class OperacoesImpl implements Operacoes<Sonda, Leitura> {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public void gravar(Sonda sonda, double probabilidade) {
         System.out.printf("probabilidade informada pela sonda %s: %.2f%%\n",
@@ -55,6 +59,9 @@ public class OperacoesImpl implements Operacoes<Sonda, Leitura> {
     }
 
     // O(N)
+    // N - quantidade de probabilidades armazenadas
+    // justificativa: o algoritmo possui apenas um laço de repetição simples
+    // consequências: o tempo cresce linearmente de acordo com a quantidade de probabilidades 
     @Override
     public double obterTotalProbabilidades() {
         double total = 0;

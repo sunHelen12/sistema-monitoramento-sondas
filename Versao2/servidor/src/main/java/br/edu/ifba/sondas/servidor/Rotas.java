@@ -36,6 +36,8 @@ public class Rotas {
     private static Operacoes<Sonda, Leitura> operacoes = null;
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     private static Operacoes<Sonda, Leitura> getOperacoes() {
         if (operacoes == null) {
             operacoes = new OperacoesImpl();
@@ -51,6 +53,8 @@ public class Rotas {
     private PrivateKey chave = null;
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     private PrivateKey getChavePrivada() throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
         if (chave == null) {
             File arquivo = new File(CAMINHO_CHAVE_PRIVADA);
@@ -67,6 +71,8 @@ public class Rotas {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     private String desencriptar(byte[] encriptado) throws NoSuchAlgorithmException, NoSuchPaddingException,
             InvalidKeyException, InvalidKeySpecException, IOException, IllegalBlockSizeException, BadPaddingException {
         Cipher cipher = Cipher.getInstance(ALGORITMO_DE_ENCRIPTACAO);

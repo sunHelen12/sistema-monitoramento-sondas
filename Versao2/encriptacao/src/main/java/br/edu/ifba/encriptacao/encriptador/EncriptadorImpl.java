@@ -20,6 +20,8 @@ public class EncriptadorImpl extends Encriptador {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public String encriptar(String dados) throws FalhaEncriptacao {
         String encriptacao = "";
@@ -41,6 +43,8 @@ public class EncriptadorImpl extends Encriptador {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public String desencriptar(String encriptacao) throws FalhaEncriptacao {
         String dados = null;

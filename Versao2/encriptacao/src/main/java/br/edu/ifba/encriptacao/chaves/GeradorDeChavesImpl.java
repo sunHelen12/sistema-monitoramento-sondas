@@ -18,6 +18,8 @@ public class GeradorDeChavesImpl implements GeradorDeChaves<GeradorDeAleatorieda
     private String algoritmoDeEncriptacao = null;
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public void inicializar(GeradorDeAleatoriedadeReal geradorDeAleatoriedade, String algoritmoDeEncriptacao) {
         this.geradorDeAleatoriedade = geradorDeAleatoriedade;
@@ -25,6 +27,8 @@ public class GeradorDeChavesImpl implements GeradorDeChaves<GeradorDeAleatorieda
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public KeyPair gerarChaves() throws FalhaGeracaoDeChaves {
         KeyPair chaves = null;
@@ -42,6 +46,8 @@ public class GeradorDeChavesImpl implements GeradorDeChaves<GeradorDeAleatorieda
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public KeyPair gerarChaves(String caminhoChavePrivada, String caminhoChavePublica) throws FalhaGeracaoDeChaves {
         KeyPair chaves = gerarChaves();
@@ -56,6 +62,8 @@ public class GeradorDeChavesImpl implements GeradorDeChaves<GeradorDeAleatorieda
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     private void gravar(String caminho, byte[] bytes) throws FalhaGeracaoDeChaves {
         File f = new File(caminho);
         f.getParentFile().mkdirs();
@@ -72,6 +80,8 @@ public class GeradorDeChavesImpl implements GeradorDeChaves<GeradorDeAleatorieda
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public void finalizar() throws FalhaGeracaoDeChaves {
         geradorDeAleatoriedade.finalizar();

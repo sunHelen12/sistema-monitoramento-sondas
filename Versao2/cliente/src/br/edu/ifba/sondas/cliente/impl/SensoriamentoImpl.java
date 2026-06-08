@@ -8,7 +8,11 @@ import br.edu.ifba.sondas.cliente.sensoriamento.Sensoriamento;
 
 public class SensoriamentoImpl implements Sensoriamento<Leitura> {
 
-    // Complexidade Linear, O(N)
+    // O(N)
+    // N - quantidade total de leituras a serem geradas
+    // justificativa: o algoritmo possui apenas um laço de repetição simples
+    // consequências: o tempo de execução cresce linearmente de acordo com a
+    // a quantidade de leituras
     @Override
     public List<Leitura> gerar(int totalLeituras) {
         List<Leitura> leituras = new ArrayList<>();

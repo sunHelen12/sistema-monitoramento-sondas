@@ -31,6 +31,8 @@ public class GeradorDeAleatoriedadeReal extends SecureRandom {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     private Frame proximoQuadro() throws FalhaGeracaoDeChaves {
         Frame quadro = null;
 
@@ -44,6 +46,8 @@ public class GeradorDeAleatoriedadeReal extends SecureRandom {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     private BufferedImage proximaImage() throws FalhaGeracaoDeChaves {
         BufferedImage imagem = null;
 
@@ -61,6 +65,9 @@ public class GeradorDeAleatoriedadeReal extends SecureRandom {
         return imagem;
     }
 
+    // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public int nextInt() {
         int val = 0;
@@ -76,6 +83,9 @@ public class GeradorDeAleatoriedadeReal extends SecureRandom {
         return val;
     }
 
+    // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public long nextLong() {
         long val = 0;
@@ -96,6 +106,9 @@ public class GeradorDeAleatoriedadeReal extends SecureRandom {
     }
 
     // O(K)
+    // K - quantidade de bytes gerados da imagem 
+    // justificativa: o algoritmo possui apenas um laço de repetição simples
+    // consequências: o tempo cresce linearmente de acordo com a quantidade de bytes
     private int[] getAleatoriedade() {
         int[] aleatoriedade = null;
 
@@ -119,6 +132,8 @@ public class GeradorDeAleatoriedadeReal extends SecureRandom {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     public void finalizar() throws FalhaGeracaoDeChaves {
         try {
             grabber.stop();

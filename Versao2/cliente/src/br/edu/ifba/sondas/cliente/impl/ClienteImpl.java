@@ -41,6 +41,8 @@ public class ClienteImpl implements Cliente<Sonda, Leitura>, Runnable {
     private PublicKey chave = null;
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public void configurar(Sonda sonda, Sensoriamento<Leitura> sensoriamento) throws Exception {
         this.sonda = sonda;
@@ -49,6 +51,8 @@ public class ClienteImpl implements Cliente<Sonda, Leitura>, Runnable {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     private PublicKey getChave() throws Exception {
         File arquivo = new File(CAMINHO_CHAVE_PUBLICA);
         FileInputStream stream = new FileInputStream(arquivo);
@@ -63,6 +67,8 @@ public class ClienteImpl implements Cliente<Sonda, Leitura>, Runnable {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     private byte[] encriptar(String dados) throws Exception {
         Cipher cifrador = Cipher.getInstance(ALGORITMO_ENCRIPTACAO);
         cifrador.init(Cipher.ENCRYPT_MODE, chave);
@@ -72,6 +78,8 @@ public class ClienteImpl implements Cliente<Sonda, Leitura>, Runnable {
 
     @SuppressWarnings("deprecation")
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public Resultado enviar(Leitura leitura) throws Exception {
         Resultado resultado = Resultado.SUCESSO;
@@ -105,6 +113,8 @@ public class ClienteImpl implements Cliente<Sonda, Leitura>, Runnable {
 
     @SuppressWarnings("deprecation")
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public Resultado enviar(double probabilidade) throws Exception {
         Resultado resultado = Resultado.SUCESSO;
@@ -133,6 +143,8 @@ public class ClienteImpl implements Cliente<Sonda, Leitura>, Runnable {
     }
 
     // O(1)
+    // justificativa: o algoritmo executa um número fixo de operações
+    // consequências: o tempo de execução permanece constante
     @Override
     public boolean ocorreuDiferencaSignificativa(Leitura leituraAtual, Leitura ultimaLeitura,
             double limiarTemperatura, double limiarOxigenio) {
@@ -143,6 +155,9 @@ public class ClienteImpl implements Cliente<Sonda, Leitura>, Runnable {
     }
 
     // O(F)
+    // F - quantidade de campos do JSON
+    // justificativa: o algoritmo possui apenas um laço de repetição simples
+    // consequências: o tempo cresce linearmente de acordo com a quantidade de entradas 
     private String montarJson(Map<String, String> campos) {
         StringBuilder json = new StringBuilder("{");
         int i = 0;
@@ -158,6 +173,10 @@ public class ClienteImpl implements Cliente<Sonda, Leitura>, Runnable {
     }
 
     // O(M^2)
+    // M - quantidade de leituras 
+    // justificativa: o algoritmo compara cada leitura com todas as leituras seguintes
+    // através de dois laços aninhados
+    // consequências: o tempo de execução cresce quadraticamente 
     private double calcularProbabilidadeDeVida(List<Leitura> leituras) {
         int m = leituras.size();
         double scorePlanetaTotal = 0;
@@ -193,6 +212,14 @@ public class ClienteImpl implements Cliente<Sonda, Leitura>, Runnable {
     }
 
     // O(N * M^2)
+    // N - quantidade total de leituras geradas
+    // M - quantidade de leituras armazenadas na janela de probabilidade
+    // justificativa: o algoritmo percorre todas as N leituras uma vez e,
+    // sempre que ocorre uma diferença significativa, executa o método
+    // calcularProbabilidadeDeVida(), que possui complexidade O(M²)
+    // consequências: o tempo de execução cresce linearmente com a quantidade
+    // de leituras geradas e quadraticamente com o tamanho da janela utilizada
+    // no cálculo da probabilidade
     @Override
     public void run() {
         List<Leitura> leituras = sensoriamento.gerar(TOTAL_DE_LEITURAS);
