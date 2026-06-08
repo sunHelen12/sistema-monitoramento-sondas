@@ -1,18 +1,27 @@
 package br.edu.ifba.sondas.servidor;
 
+import java.io.IOException;
+import java.net.URI;
+
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-import java.net.URI;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Base terrestre Versão 2 (otimizada) iniciando...");
-        String baseUri = "http://localhost:8080/api/";
-        ResourceConfig config = new ResourceConfig().packages("br.edu.ifba.sondas.servidor");
-        HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create(baseUri), config);
-        System.out.println("Servidor iniciado em " + baseUri);
+
+    private static final String BASE_URL = "http://0.0.0.0:8080/";
+
+    // O(1)
+    private static HttpServer iniciarServidor() {
+        ResourceConfig configuracao = new ResourceConfig().packages("br.edu.ifba.sondas.servidor");
+
+        return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URL), configuracao);
+    }
+
+    public static void main(String[] args) throws IOException {
+        HttpServer servidor = iniciarServidor();
+        System.out.println("atendendo sondas espaciais...");
         System.in.read();
-        server.shutdownNow();
+        servidor.shutdown();
     }
 }

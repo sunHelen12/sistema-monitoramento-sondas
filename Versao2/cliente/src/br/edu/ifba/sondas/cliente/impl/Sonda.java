@@ -1,4 +1,4 @@
-package br.edu.ifba.sondas.servidor.impl;
+package br.edu.ifba.sondas.cliente.impl;
 
 public class Sonda implements Comparable<Sonda> {
 
@@ -17,8 +17,18 @@ public class Sonda implements Comparable<Sonda> {
     }
 
     // O(1)
+    public void setIdentificacao(String identificacao) {
+        this.identificacao = identificacao;
+    }
+
+    // O(1)
     public String getPlanetaAlvo() {
         return planetaAlvo;
+    }
+
+    // O(1)
+    public void setPlanetaAlvo(String planetaAlvo) {
+        this.planetaAlvo = planetaAlvo;
     }
 
     // O(1)

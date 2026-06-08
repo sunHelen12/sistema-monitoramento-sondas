@@ -1,4 +1,4 @@
-package br.edu.ifba.sondas.servidor.impl;
+package br.edu.ifba.sondas.cliente.impl;
 
 public class Leitura {
 
@@ -21,8 +21,18 @@ public class Leitura {
     }
 
     // O(1)
+    public void setNivelOxigenio(double nivelOxigenio) {
+        this.nivelOxigenio = nivelOxigenio;
+    }
+
+    // O(1)
     public double getNivelRadiacao() {
         return nivelRadiacao;
+    }
+
+    // O(1)
+    public void setNivelRadiacao(double nivelRadiacao) {
+        this.nivelRadiacao = nivelRadiacao;
     }
 
     // O(1)
@@ -31,8 +41,18 @@ public class Leitura {
     }
 
     // O(1)
+    public void setTemperatura(double temperatura) {
+        this.temperatura = temperatura;
+    }
+
+    // O(1)
     public boolean isAguaSubterranea() {
         return aguaSubterranea;
+    }
+
+    // O(1)
+    public void setAguaSubterranea(boolean aguaSubterranea) {
+        this.aguaSubterranea = aguaSubterranea;
     }
 
     // O(1)
