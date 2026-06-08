@@ -12,7 +12,7 @@ import br.edu.ifba.encriptacao.excecoes.FalhaGeracaoDeChaves;
 
 public class GeradorDeChavesImpl implements GeradorDeChaves<GeradorDeAleatoriedadeReal> {
 
-    private static int TAMANHO_CHAVES_ENCRIPTACAO = 1024;
+    private static int TAMANHO_CHAVES_ENCRIPTACAO = 2048;
 
     private GeradorDeAleatoriedadeReal geradorDeAleatoriedade = null;
     private String algoritmoDeEncriptacao = null;
